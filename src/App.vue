@@ -1,30 +1,106 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <NavMenu />
+    <div id="formulas">
+      <math-jax latex="\prec" />
+    </div>
+
+    <pre v-highlightjs><code class="javascript">const s = new Date().toString()</code></pre>
+
+    <Markdown :source="source" />
   </nav>
-  <router-view/>
+  <router-view />
 </template>
+
+<script>
+import NavMenu from "@/components/NavMenu.vue"
+import Markdown from 'vue3-markdown-it';
+
+export default ({
+  components: {
+    NavMenu,
+    Markdown,
+  },
+  data:()=>{
+    return {
+      source:"# hello world!"
+    }
+  }
+})
+</script>
+
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #FFBA08;
+  background-color: #03071E;
+  min-height:100vh;
+}
+#cuerpo{
+  margin: 1rem;
 }
 
-nav {
-  padding: 30px;
+.enfasis {
+    color: #E85D04;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.importante {
+    background-color: #4d194d;
+    padding: 2rem;
+    margin: 2rem;
+    border-style: dashed;
+    border-color: #d00000;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.importante em {
+    display: block;
+    color: #D00000;
+}
+
+h1 {
+    text-align: center;
+    color: #E85D04;
+    padding: 2rem 0;
+}
+
+h2 {
+    color: #dc2f02;
+    padding: 0 0.5rem;
+    padding: 2rem 0;
+}
+
+h3 {
+    color: #bb4d00;
+    padding: 0 1.5rem;
+    padding: 1rem 0;
+}
+
+h4 {
+    color: #7400b8;
+    padding: 0 2rem;
+}
+
+h5 {
+    color: #adff02;
+    padding: 0 2.5rem;
+}
+
+pre {
+    padding: 1em 3em;
+}
+
+pre code {
+    border-radius: 0.3em;
+}
+
+kbd {
+    background-color: #7400b8;
+    padding: 5px 5px;
+    border-radius: 5px;
+    display: inline;
+    box-shadow: 0px 4px 8px -4px #555555;
 }
 </style>
