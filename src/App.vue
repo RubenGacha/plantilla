@@ -1,25 +1,16 @@
 <template>
   <nav>
     <NavMenu />
-    <div id="formulas">
-      <math-jax latex="\prec" />
-    </div>
-
-    <pre v-highlightjs><code class="javascript">const s = new Date().toString()</code></pre>
-
-    <Markdown :source="source" />
   </nav>
   <router-view />
 </template>
 
 <script>
 import NavMenu from "@/components/NavMenu.vue"
-import Markdown from 'vue3-markdown-it';
 
 export default ({
   components: {
     NavMenu,
-    Markdown,
   },
   data:()=>{
     return {
@@ -41,6 +32,7 @@ export default ({
 }
 #cuerpo{
   margin: 1rem;
+  padding: 3rem;
 }
 
 .enfasis {
@@ -59,7 +51,20 @@ export default ({
     display: block;
     color: #D00000;
 }
-
+.comentario{
+  color:#555555;
+}
+.clave{
+  color:#d00000;
+}
+.cambiar{
+  text-decoration: underline #adff02;
+  color: #adff02;
+}
+img{
+  display:block;
+  margin: 0 auto;
+}
 h1 {
     text-align: center;
     color: #E85D04;
@@ -102,5 +107,27 @@ kbd {
     border-radius: 5px;
     display: inline;
     box-shadow: 0px 4px 8px -4px #555555;
+}
+
+q{
+  color:#7400b8
+}
+
+li em{
+  color:#adff02;
+}
+dt{
+  color:#adff02;
+}
+
+span mjx-container{
+  display: block;
+  color:#adff02;
+  text-align: center;
+  padding:1em;
+  margin:2em;
+  border-radius: 0.3em;
+  border: salmon dotted 0.3em;
+  background: #131418;
 }
 </style>

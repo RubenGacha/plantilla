@@ -16,7 +16,7 @@ import Mathjax, {initMathJax,renderByMathjax} from "mathjax-vue3"
 import vue3Highlight from 'vue3-highlightjs'
 
 function onMathJaxReady(){
-    const el = document.getElementById("formulas")
+    const el = document.getElementById("cuerpo")
     renderByMathjax(el)
 }
 

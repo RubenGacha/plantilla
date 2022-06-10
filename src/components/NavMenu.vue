@@ -26,7 +26,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
             >
-            Dropdown
+            Conocimientos Basicos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li v-for="(item,index) in PrimerElemento" :key=index>
@@ -35,7 +35,67 @@
             </ul>
         </li>
         </ul>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+            <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >
+            Busqueda en grafos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li v-for="(item,index) in SegundoElemento" :key=index>
+                <router-link :to="item.url" :class="['dropdown-item']">{{item.name}}</router-link>
+            </li>
+            </ul>
+        </li>
+        </ul>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+            <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >
+            Probabilidad
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li v-for="(item,index) in TercerElemento" :key=index>
+                <router-link :to="item.url" :class="['dropdown-item']">{{item.name}}</router-link>
+            </li>
+            </ul>
+        </li>
+        </ul>
         
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+            <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >
+            Logica
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li v-for="(item,index) in CuartoElemento" :key=index>
+                <router-link :to="item.url" :class="['dropdown-item']">{{item.name}}</router-link>
+            </li>
+            </ul>
+        </li>
+        </ul>
+
     </div>
     </div>
 </nav>
@@ -47,9 +107,24 @@ export default {
     data:()=>{
         return {
             PrimerElemento:[
-            {name:"about",url:"/about"},
-            {name:"about",url:"/about"}
+            {name:"Presentacion",url:"/presentacion"},
+            {name:"Expresiones Regulares",url:"/regex"},
+            {name:"Lenguajes de Programacion",url:"/lenguajes_programacion"},
+            {name:"Razonamiento y Aprendizaje",url:"/razonamiento_aprendizaje"},
+            {name:"Agentes Inteligentes",url:"/agentes_inteligentes"},
+            {name:"Complejidad y Tratabilidad",url:"/complejidad_tratabilidad"},
+            ],
+            SegundoElemento:[
+            {name:"Introduccion",url:"/busqueda_grafos/introduccion"},
+            
+            ],
+            TercerElemento:[
+            {name:"Introduccion",url:"/probabilidad/introduccion"},
+            ],
+            CuartoElemento:[
+            {name:"Introduccion",url:"/logica/introduccion"},
             ]
+
         }
     }
 
